@@ -22,7 +22,7 @@ module RestAPI
 
   def get(uri)
     begin
-      JSON.parse(RestClient.get(uri, default_headers), :max_nesting => false)
+      JSON.parse(RestClient.get(uri, default_headers))
     rescue => e
       if $DEBUG
         raise "Error while sending a GET request #{uri}\n: #{e}"
