@@ -35,8 +35,8 @@ module CouchRest
       ref_or_name.is_a?(Symbol) ? available_databases.keys.include?(ref_or_name) : available_databases.values.map{|db| db.name}.include?(ref_or_name)
     end
   
-    def default_database=(name, create_unless_exists = true)
-      define_available_database(:default, name, create_unless_exists = true)
+    def default_database=(name, create_unless_exists = false)
+      define_available_database(:default, name, create_unless_exists = false)
     end
     
     def default_database
